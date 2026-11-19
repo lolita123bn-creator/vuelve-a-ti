@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vuelve a ti · Diario de amor propio de 50 días</title>
+<meta name="description" content="50 días de ejercicios prácticos, con un test para descubrir en qué estás fallando, para volver a quererte. Diario en PDF.">
+<meta property="og:title" content="Vuelve a ti · Diario de amor propio de 50 días">
+<meta property="og:description" content="50 días de ejercicios prácticos para quererte de nuevo. Descarga inmediata en PDF.">
+<meta property="og:image" content="img/portada.jpg">
+<style>
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/figtree-normal.woff2) format('woff2');}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/fraunces-italic.woff2) format('woff2');}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/fraunces-normal.woff2) format('woff2');}
+
+:root{
+  --perla:#FFFFFF; --crema:#FFF6EE; --durazno:#FFE6D3; --durazno2:#FFD3B0;
+  --negro:#16161A; --txt:#2A2A30; --muted:#5E5E68;
+  --brasa:#F2691C; --brasa-d:#C9480B; --brasa-txt:#B43E08;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Figtree',system-ui,sans-serif;color:var(--txt);background:var(--crema);line-height:1.55;font-size:17px;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--negro);line-height:1.08;letter-spacing:-.015em}
+em{font-style:italic;color:var(--brasa-txt);font-weight:600}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+section{padding:64px 0}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--brasa-txt);margin-bottom:12px}
+h2{font-size:clamp(30px,6.4vw,46px);font-weight:700}
+.lead{font-size:18px;color:var(--muted);max-width:60ch;margin-top:14px}
+
+/* botón */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;cursor:pointer;font:700 17px 'Figtree',sans-serif;color:var(--negro);text-decoration:none;
+  background:linear-gradient(135deg,#FFB05C,#F2691C 60%,#E5560F);box-shadow:0 10px 26px rgba(242,105,28,.38),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(242,105,28,.46),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--negro);outline-offset:3px}
+.btn svg{width:20px;height:20px}
+.price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-line b{font-family:'Fraunces',serif;font-size:40px;color:var(--negro);line-height:1}
+.price-line s{color:var(--muted);font-size:20px}
+.price-line span{font-size:14px;color:var(--muted)}
+.micro{font-size:14px;color:var(--muted);margin-top:10px}
+
+/* barra superior */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,246,238,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(22,22,26,.06)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:62px}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:21px;color:var(--negro);text-decoration:none}
+.logo em{font-weight:600}
+.top .btn{min-height:42px;padding:0 20px;font-size:15px;box-shadow:0 6px 16px rgba(242,105,28,.3)}
+
+/* hero */
+.hero{padding:34px 0 56px;background:radial-gradient(120% 70% at 85% 0,#FFD9B8 0,rgba(255,217,184,0) 60%),linear-gradient(180deg,#FFFFFF 0,var(--crema) 100%);position:relative;overflow:hidden}
+.hero .grid{display:grid;gap:34px;align-items:center}
+.hero h1{font-size:clamp(52px,14vw,92px);font-weight:700;margin:6px 0 16px}
+.hero .sub{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(20px,4.6vw,26px);color:var(--txt);max-width:28ch;line-height:1.25}
+.chips{display:grid;gap:10px;margin:24px 0}
+.chip{display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px;color:var(--negro)}
+.chip i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--durazno);display:grid;place-items:center}
+.chip svg{width:18px;height:18px;stroke:var(--brasa-txt)}
+.hero .cta-row{display:grid;gap:14px;max-width:420px}
+.book{position:relative;max-width:360px;margin-inline:auto;width:100%}
+.book .cover{border-radius:10px;box-shadow:0 30px 60px rgba(120,40,0,.32),0 6px 14px rgba(0,0,0,.18);transform:rotate(-3deg);border:1px solid rgba(255,255,255,.6)}
+.book .back{position:absolute;right:-34px;bottom:-18px;width:46%;border-radius:8px;box-shadow:0 18px 40px rgba(120,40,0,.3);transform:rotate(5deg);border:1px solid rgba(255,255,255,.7)}
+.spark{position:absolute;width:26px;height:26px;color:var(--brasa);animation:tw 3.4s ease-in-out infinite}
+.spark.a{top:-10px;left:-6px}.spark.b{top:42%;right:-30px;width:18px;height:18px;animation-delay:1.1s}.spark.c{bottom:30px;left:-24px;width:20px;height:20px;animation-delay:2s}
+@keyframes tw{0%,100%{transform:scale(.8);opacity:.55}50%{transform:scale(1.15);opacity:1}}
+
+/* dolor */
+.pain{background:var(--perla)}
+.pain ul{list-style:none;display:grid;gap:12px;margin-top:28px}
+.pain li{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:var(--r);background:var(--crema);border:1px solid #F5E2D2;font-size:17px;color:var(--negro);font-weight:500}
+.pain li i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--durazno);display:grid;place-items:center;margin-top:1px}
+.pain li svg{width:16px;height:16px;stroke:var(--brasa-txt)}
+.pivot{margin-top:34px;padding:28px;border-radius:var(--r);background:var(--negro);color:#F7EFE7;position:relative;overflow:hidden}
+.pivot:before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(242,105,28,.6),rgba(242,105,28,0) 65%)}
+.pivot h3{color:#fff;font-size:clamp(24px,5.4vw,32px);position:relative}
+.pivot p{margin-top:12px;color:#E8DCD0;position:relative;max-width:58ch}
+
+/* cómo funciona */
+.steps{display:grid;gap:16px;margin-top:30px;counter-reset:s}
+.step{background:var(--perla);border-radius:var(--r);padding:24px;border:1px solid #F5E2D2;box-shadow:0 8px 24px rgba(180,80,20,.07);position:relative}
+.step:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFB05C,#F2691C);font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--negro);margin-bottom:14px}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:16px}
+.etapas{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.etapas span{padding:8px 16px;border-radius:999px;background:var(--perla);border:1px solid var(--durazno2);font-weight:600;font-size:14px;color:var(--negro)}
+
+/* vista previa */
+.preview{background:linear-gradient(180deg,var(--crema),var(--durazno))}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 20px 24px;margin:0 -20px;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:var(--durazno2);border-radius:6px}
+.page{flex:none;width:min(72vw,270px);scroll-snap-align:center}
+.page img{border-radius:10px;box-shadow:0 18px 36px rgba(120,40,0,.22);border:1px solid rgba(255,255,255,.8)}
+.page figcaption{margin-top:12px;font-size:14px;font-weight:600;color:var(--negro);text-align:center}
+.hint{font-size:14px;color:var(--muted)}
+
+/* incluye */
+.inc{display:grid;gap:12px;margin-top:28px}
+.inc div{display:flex;gap:14px;align-items:center;background:var(--perla);border-radius:18px;padding:16px 18px;border:1px solid #F5E2D2;font-weight:600;color:var(--negro)}
+.inc i{flex:none;width:38px;height:38px;border-radius:12px;background:var(--durazno);display:grid;place-items:center}
+.inc svg{width:20px;height:20px;stroke:var(--brasa-txt)}
+
+/* ejemplo de día */
+.day{background:var(--perla)}
+.daycard{margin-top:28px;border-radius:26px;overflow:hidden;box-shadow:0 20px 50px rgba(120,40,0,.16);border:1px solid #F5E2D2;background:var(--crema)}
+.daycard .q{background:radial-gradient(circle at 100% 0,rgba(242,105,28,.55),rgba(242,105,28,0) 55%),var(--negro);color:#F7EFE7;padding:26px 26px 24px;font-family:'Fraunces',serif;font-style:italic;font-size:22px;line-height:1.3;position:relative}
+.daycard .q small{display:block;font-family:'Figtree',sans-serif;font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:#FFB05C;margin-bottom:10px}
+.daycard .b{padding:22px 26px 26px;display:grid;gap:14px}
+.daycard .b p{color:var(--txt)}
+.daycard .ex{border-left:4px solid var(--brasa);background:var(--perla);padding:12px 16px;border-radius:0 14px 14px 0;font-family:'Fraunces',serif;font-style:italic;font-size:16px}
+.daycard .do{background:var(--perla);border:1px solid var(--durazno2);border-radius:16px;padding:16px 18px}
+.daycard .do b{display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brasa-txt);margin-bottom:6px}
+
+/* para quién */
+.who{display:grid;gap:16px;margin-top:28px}
+.who .box{border-radius:var(--r);padding:24px;border:1px solid #F5E2D2;background:var(--perla)}
+.who .box h3{font-size:22px;margin-bottom:12px}
+.who ul{list-style:none;display:grid;gap:10px}
+.who li{display:flex;gap:10px;font-size:16px}
+.who li svg{flex:none;width:20px;height:20px;margin-top:3px}
+.who .yes svg{stroke:var(--brasa-txt)} .who .no svg{stroke:var(--muted)}
+.who .no{background:transparent;border-style:dashed}
+
+/* oferta */
+.offer{background:radial-gradient(90% 70% at 50% 0,#FFB682 0,rgba(255,182,130,0) 70%),linear-gradient(180deg,var(--durazno),#FFC9A0)}
+.offer .card{max-width:560px;margin:28px auto 0;background:var(--perla);border-radius:30px;padding:34px 26px;text-align:center;box-shadow:0 30px 70px rgba(150,60,10,.28);border:1px solid rgba(255,255,255,.9);position:relative}
+.badge{display:inline-block;padding:7px 16px;border-radius:999px;background:var(--negro);color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.offer .big{font-family:'Fraunces',serif;font-weight:700;font-size:78px;line-height:1;color:var(--negro)}
+.offer .big sup{font-size:28px;vertical-align:top;position:relative;top:10px;margin-right:2px}
+.offer .was{color:var(--muted);font-size:18px;margin-top:8px}
+.offer ul{list-style:none;text-align:left;margin:24px auto;display:grid;gap:10px;max-width:380px}
+.offer li{display:flex;gap:10px;font-size:16px;font-weight:500;color:var(--negro)}
+.offer li svg{flex:none;width:20px;height:20px;stroke:var(--brasa-txt);margin-top:3px}
+.offer .btn{width:100%}
+.garantia{margin-top:22px;padding:16px;border-radius:16px;background:var(--crema);font-size:15px;color:var(--muted)}
+.garantia b{color:var(--negro)}
+
+/* faq */
+.faq details{background:var(--perla);border:1px solid #F5E2D2;border-radius:18px;margin-top:12px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;color:var(--negro);display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font-size:26px;line-height:1;color:var(--brasa-txt);font-weight:500}
+.faq details[open] summary:after{content:'–'}
+.faq details p{padding:0 22px 20px;color:var(--muted);font-size:16px}
+
+/* cierre */
+.final{background:var(--negro);color:#F7EFE7;text-align:center;position:relative;overflow:hidden}
+.final:before{content:'';position:absolute;left:50%;top:-120px;width:560px;height:560px;transform:translateX(-50%);background:radial-gradient(circle,rgba(242,105,28,.55),rgba(242,105,28,0) 65%)}
+.final .wrap{position:relative}
+.final h2{color:#fff;font-size:clamp(34px,8vw,58px)}
+.final p{max-width:46ch;margin:16px auto 28px;color:#E8DCD0;font-size:18px}
+.final .btn{min-width:min(100%,340px)}
+.final .micro{color:#C9BDB1}
+
+footer{background:#0E0E11;color:#A9A9B2;padding:34px 0 110px;font-size:13.5px;line-height:1.6}
+footer p+p{margin-top:10px}
+
+/* barra fija móvil */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,246,238,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(22,22,26,.08);display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .3s ease}
+.sticky.show{transform:none}
+.sticky .p{display:flex;flex-direction:column;line-height:1.1}
+.sticky .p b{font-family:'Fraunces',serif;font-size:24px;color:var(--negro)}
+.sticky .p s{font-size:13px;color:var(--muted)}
+.sticky .btn{min-height:48px;padding:0 22px;font-size:16px}
+
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--negro);color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;z-index:60;transition:.3s;max-width:90vw;text-align:center;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.spark{animation:none}html{scroll-behavior:auto}.btn,.sticky{transition:none}}
+
+@media (min-width:860px){
+  body{font-size:18px}
+  section{padding:92px 0}
+  .hero{padding:56px 0 90px}
+  .hero .grid{grid-template-columns:1.1fr .9fr;gap:60px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .who{grid-template-columns:1fr 1fr}
+  .inc{grid-template-columns:repeat(2,1fr)}
+  .pain ul{grid-template-columns:1fr 1fr}
+  .rail{padding-left:calc((100vw - 1080px)/2);margin:0 calc((1080px - 100vw)/2);}
+  .page{width:260px}
+  .sticky{display:none}
+  footer{padding-bottom:40px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Vuelve a <em>ti</em></a>
+    <a class="btn" href="#oferta" data-buy>Quiero mi diario</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Diario de amor propio · 50 días</div>
+      <h1>Vuelve<br>a <em>ti</em></h1>
+      <p class="sub">50 días de ejercicios para quererte de nuevo.</p>
+      <div class="chips">
+        <div class="chip"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9"/></svg></i>Test para descubrir en qué estás fallando</div>
+        <div class="chip"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-9-4-4-9 9-1 5z"/><path d="M14 6l4 4"/></svg></i>50 ejercicios prácticos, cada uno con ejemplo</div>
+        <div class="chip"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg></i>76 páginas en PDF, descarga inmediata</div>
+      </div>
+      <div class="cta-row">
+        <div class="price-line"><b>US$ 6,90</b><s>US$ 9,90</s><span>precio de lanzamiento</span></div>
+        <a class="btn" href="#oferta" data-buy>Quiero empezar mi diario
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="micro" style="margin:0">Por tiempo limitado. Lo lees en tu celular, tablet o computadora, o lo imprimes.</p>
+      </div>
+    </div>
+    <div class="book rv">
+      <svg class="spark a" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg>
+      <svg class="spark b" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg>
+      <svg class="spark c" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg>
+      <img class="cover" src="img/portada.jpg" width="794" height="1123" alt="Portada del diario Vuelve a ti: un rostro sereno con lágrima negra y grietas doradas">
+      <img class="back" src="img/dia1.jpg" width="794" height="1123" alt="Página interior del diario, día 1" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="pain">
+  <div class="wrap">
+    <div class="eyebrow">Quizá te suene</div>
+    <h2>¿Te pasa <em>esto</em>?</h2>
+    <ul>
+      <li class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></i>Te hablas peor de lo que le hablarías a cualquier amiga.</li>
+      <li class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></i>Dices que sí cuando quieres decir no, y después te sientes agotada o culpable.</li>
+      <li class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></i>Te comparas y sientes que siempre vas atrasada.</li>
+      <li class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></i>Dejas tu descanso y tus gustos para el final de la lista.</li>
+      <li class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></i>Quieres cambiar, pero no sabes por dónde empezar.</li>
+    </ul>
+    <div class="pivot rv">
+      <h3>No es que seas débil. Te falta un camino claro.</h3>
+      <p>El amor propio no se arregla con una frase bonita. Se construye con pequeños gestos repetidos, un día a la vez. Este diario te da ese camino: cada día, una idea corta, un ejemplo y un ejercicio que puedes hacer hoy mismo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Así funciona</div>
+    <h2>Un camino de <em>50 días</em>, paso a paso</h2>
+    <div class="steps">
+      <div class="step rv"><h3>Empieza con el test</h3><p>Descubre en qué estás fallando y en qué áreas necesitas más cariño.</p></div>
+      <div class="step rv"><h3>Recorre 7 etapas</h3><p>Cada una dura una semana y trabaja una parte distinta de tu amor propio.</p></div>
+      <div class="step rv"><h3>Cada día, 10 a 30 minutos</h3><p>Una frase, un texto corto, un ejemplo, tu ejercicio y un espacio para escribir.</p></div>
+      <div class="step rv"><h3>Cierra con tu antes y ahora</h3><p>Mide cuánto cambiaste y deja armado tu plan para seguir y tu pacto contigo.</p></div>
+    </div>
+    <div class="etapas rv" aria-label="Las siete etapas">
+      <span>1 · Ver</span><span>2 · Callar a la crítica</span><span>3 · Cuidarte</span><span>4 · Poner límites</span><span>5 · Perdonarte</span><span>6 · Elegirte</span><span>7 · Renacer</span>
+    </div>
+  </div>
+</section>
+
+<!-- VISTA PREVIA -->
+<section class="preview">
+  <div class="wrap">
+    <div class="eyebrow">Míralo por dentro</div>
+    <h2>Así se ve <em>tu diario</em></h2>
+    <p class="lead">Páginas reales del diario. Desliza para verlas.</p>
+  </div>
+  <div class="wrap">
+    <div class="rail" tabindex="0" aria-label="Páginas del diario">
+      <figure class="page"><img src="img/test.jpg" width="794" height="1123" alt="Test: ¿en qué estoy fallando?" loading="lazy"><figcaption>El test inicial</figcaption></figure>
+      <figure class="page"><img src="img/capitulo.jpg" width="794" height="1123" alt="Apertura del capítulo 1: Ver" loading="lazy"><figcaption>Apertura de cada capítulo</figcaption></figure>
+      <figure class="page"><img src="img/dia1.jpg" width="794" height="1123" alt="Día 1: Hoy empiezo" loading="lazy"><figcaption>Un día completo</figcaption></figure>
+      <figure class="page"><img src="img/dia8.jpg" width="794" height="1123" alt="Día 8: Conoce a tu crítica" loading="lazy"><figcaption>Cada semana, su color</figcaption></figure>
+      <figure class="page"><img src="img/respiro.jpg" width="794" height="1123" alt="Página de respiro" loading="lazy"><figcaption>Páginas de respiro</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Qué recibes</div>
+    <h2>Todo lo que incluye tu <em>diario</em></h2>
+    <div class="inc">
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9"/></svg></i>Test inicial con mapa de resultados</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></i>50 días de ejercicios, cada uno con su ejemplo</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 15l3-4 3 3 2-2 2 3"/></svg></i>7 capítulos con ilustraciones</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></i>7 páginas de respiro</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>Seguimiento de tus 50 días</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></i>Página de antes y ahora</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></i>Plan para los días difíciles</div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-9-4-4-9 9-1 5z"/><path d="M14 6l4 4"/></svg></i>Pacto final para firmar</div>
+    </div>
+  </div>
+</section>
+
+<!-- UN DÍA -->
+<section class="day">
+  <div class="wrap">
+    <div class="eyebrow">Un día del diario</div>
+    <h2>Esto harías <em>en el día 10</em></h2>
+    <div class="daycard rv">
+      <div class="q"><small>Día 10 · La frase de amiga</small>Háblate como le hablarías a la persona que más quieres.</div>
+      <div class="b">
+        <p>Con tus amigas eres paciente, comprensiva y generosa. Contigo, a veces, eres juez y verdugo. Hoy vas a usar esa misma ternura para ti.</p>
+        <div class="ex">Daniela se decía «qué inútil». Imaginó a su hermana contándole lo mismo y le escribió: «cualquiera se equivoca, mañana lo arreglas». Después se lo leyó a sí misma.</div>
+        <div class="do"><b>Tu ejercicio · 10 min</b>Piensa en algo que hoy te reprochas. Imagina que una amiga querida te lo cuenta: ¿qué le dirías? Escríbelo y léelo en voz alta como si te lo dijera ella a ti.</div>
+      </div>
+    </div>
+    <p class="micro" style="margin-top:14px">Los ejemplos con nombres son historias ilustrativas inventadas, no casos reales.</p>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">¿Es para ti?</div>
+    <h2>Mira si <em>encaja</em> contigo</h2>
+    <div class="who">
+      <div class="box yes rv"><h3>Es para ti si…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Quieres hablarte con más cariño y sentirte más segura.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Prefieres ejercicios sencillos a teorías largas.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Puedes dedicarte entre 10 y 30 minutos al día.</li>
+        </ul></div>
+      <div class="box no rv"><h3>Quizá no sea para ti si…</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Buscas resultados mágicos o inmediatos.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Estás pasando por una crisis fuerte: en ese caso lo mejor es hablar con un psicólogo o profesional de salud mental. Este diario acompaña, pero no reemplaza esa ayuda.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div style="text-align:center"><div class="eyebrow">Precio de lanzamiento</div><h2>Empieza hoy tus <em>50 días</em></h2></div>
+    <div class="card rv">
+      <span class="badge">Solo durante el lanzamiento</span>
+      <div class="big"><sup>US$</sup>6,90</div>
+      <div class="was">Después costará <s>US$ 9,90</s></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Diario completo en PDF (76 páginas)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Test inicial, 50 ejercicios con ejemplos y seguimiento</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Descarga inmediata, para leer o imprimir</li>
+      </ul>
+      <a class="btn" href="#" data-buy>Quiero empezar mi diario
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="garantia"><b>Garantía de satisfacción.</b> Si el diario no es lo que esperabas, puedes pedir tu reembolso dentro del plazo de garantía de la plataforma de pago.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <h2>Lo que quizá te estás <em>preguntando</em></h2>
+    <details><summary>¿En qué formato llega?</summary><p>En PDF. Puedes leerlo en el celular, la tablet o el computador, o imprimirlo y escribir a mano.</p></details>
+    <details><summary>¿Cuánto tiempo necesito al día?</summary><p>Entre 10 y 30 minutos, según el ejercicio.</p></details>
+    <details><summary>¿Y si me salto un día?</summary><p>No pasa nada. Retomas donde lo dejaste, sin culpa.</p></details>
+    <details><summary>¿Reemplaza a una terapia?</summary><p>No. Es una herramienta de crecimiento personal. Si lo que sientes es muy grande, busca a un psicólogo o profesional de salud mental.</p></details>
+    <details><summary>¿Los ejemplos son casos reales?</summary><p>No. Son historias ilustrativas inventadas para que veas cómo se aplica cada ejercicio.</p></details>
+    <details><summary>¿Puedo comprarlo desde cualquier país?</summary><p>Sí. El pago se hace en la plataforma de pago, que te muestra el precio en tu moneda cuando está disponible.</p></details>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="final">
+  <div class="wrap">
+    <h2>No tienes que hacerlo perfecto.<br>Solo tienes que <em style="color:#FFB05C">empezar hoy.</em></h2>
+    <p>Cincuenta días pueden cambiar cómo te hablas, cómo te cuidas y cómo te eliges.</p>
+    <a class="btn" href="#" data-buy>Quiero empezar mi diario · US$ 6,90</a>
+    <p class="micro" style="margin:16px auto 0">Precio de lanzamiento por tiempo limitado.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#fff">Vuelve a ti</b> · Amor Propio</p>
+    <p>Este diario es una herramienta de crecimiento personal y no reemplaza la ayuda de un psicólogo o profesional de salud mental. Los ejemplos con nombres de mujeres son historias ilustrativas inventadas, no casos reales.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="p"><b>US$ 6,90</b><s>antes US$ 9,90</s></div>
+  <a class="btn" href="#oferta" data-buy tabindex="-1">Quiero mi diario</a>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// Pon aquí el enlace de compra de tu producto en Hotmart cuando lo tengas.
+var BUY_URL = "https://pay.hotmart.com/R108562984E?offDiscount=LANZAMIENTO";
+
+(function(){
+  var toast=document.getElementById('toast'),tt;
+  function show(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},3200)}
+  if(BUY_URL){document.querySelectorAll('[data-buy]').forEach(function(a){if(a.getAttribute('href')==='#'){a.setAttribute('href',BUY_URL);}});}
+  document.querySelectorAll('[data-buy]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var isOfferJump=a.getAttribute('href')==='#oferta';
+      if(isOfferJump){return;}
+      e.preventDefault();
+      if(BUY_URL){window.location.href=BUY_URL;}else{show('Aquí irá tu enlace de compra de Hotmart.');}
+    });
+  });
+  // la barra fija aparece al bajar del héroe
+  var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),offer=document.getElementById('oferta');
+  function chk(){var y=window.scrollY||0,h=hero.offsetHeight*0.8;var o=offer.getBoundingClientRect();var inOffer=o.top<window.innerHeight*0.6&&o.bottom>0;st.classList.toggle('show',y>h&&!inOffer);}
+  window.addEventListener('scroll',chk,{passive:true});chk();
+  // aparición suave
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
